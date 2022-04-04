@@ -31,7 +31,7 @@ export default class Cursor extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const shouldHide = !this.props.isDone && nextProps.isDone && this.props.hideWhenDone;
     if (shouldHide) {
       setTimeout(() => this.setState({ shouldRender: false }), this.props.hideWhenDoneDelay);
